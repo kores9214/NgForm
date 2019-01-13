@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <h1>30 Day Employee Review</h1>
+  <h1 style="opacity:0">Employee Form</h1>
+  <label>Employee's Name</label>
+  <form #userForm="ngForm">
+
+    <div class="form-group row">
+      <div class="col-md-6 mb-3">
+        <input type="text" class="form-control" name="fname" 
+        [(ngModel)]="empObj.fname">
+        <label>First name</label>
+      </div>
+      <div class="col-md-6 mb-3">
+        <input type="text" class="form-control" name="lname" [(ngModel)]="empObj.lname">
+        <label>Last name</label>
+      </div>
+    </div>
+
+    <label>Employee's Department</label>
+    <div class="form-group">
+      <select class="custom-select" name="dept" 
+      [(ngModel)]="empObj.dept">
+        <option *ngFor="let value of departments">{{value}}</option>     
+      </select>
+    </div>  
+    <br/><br/>
+    <button class="btn btn-primary" type="submit">Submit Form</button>
+  </form>   
+<div>
